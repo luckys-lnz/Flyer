@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poster</title>
+</head>
+
+<body>
+  <div id="display-flex">
+  <main class="wrapper">
+
+    <div class="container">
+    <div contenteditable="true" id="Obituary"><h1 class="obi">Obituary</h1></div>
+
+    <div id="image"> 
+      <label for="obituary-pict">choose image</label>
+      <input id="obituary-pict" type="file" onchange="previewFile()">
+      <img id="obituary-pic" src=""  alt ="">
+    </div>
+
+      <div id="name-holder">
+        <div id="name">
+          <p contenteditable="true" id="name-of-person">Chief okutu jiga <br/> <small class="date">may 4 1975 - dec 4 2002 </small></p>
+      </div> 
+  </div>
+  
+
+  <div id="content-holder">
+    <div id="content">
+      <p contenteditable="true" id="editable content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+        when an unknown printer took a galley of type and scrambled <br> <br><h3 contenteditable="true" class="funeral-arangenments">Funeral Arangements</h3><br> 
+       <p contenteditable="true"> Contrary to popular belief, 
+        Lorem Ipsum is not simply random text. 
+        It has roots in a piece of classical Latin literature from 45 BC, 
+        making it over 2000 years old. Richard McClintock, 
+        a Latin professor at Hampden-Sydney College in Virginia, 
+        looked up one of the more obscure Latin words, consectetur, 
+        from a Lorem Ipsum passage, and going through the cites of the word in classical literature, 
+        discovered the undoubtable source. Lorem Ipsum</p><br><h3 contenteditable="true" class="funeral-arangenments">Funeral Arangements</h3><br> 
+        <p contenteditable="true"> Contrary to popular belief, 
+        Lorem Ipsum is not simply random text. 
+        It has roots in a piece of classical Latin literature from 45 BC, 
+        making it over 2000 years old. Richard McClintock,</p> </p>
+  </div> 
+</div>
+
+    </div>
+  </div>
+  </main>
+</div>
+</body>
+
+<script>
+function previewFile() {
+  const preview = document.querySelector('img');
+  const file = document.querySelector('input[type=file]').files[0];
+  const reader = new FileReader();
+
+  reader.addEventListener("load", function () {
+    // convert image file to base64 string
+    preview.src = reader.result;
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+</script>
+
+</html>
